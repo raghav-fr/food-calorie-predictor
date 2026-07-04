@@ -1,11 +1,11 @@
 import os
-
+import pandas as pd
 def get_classes(root):
   return sorted([d for d in os.listdir(root)
                  if os.path.isdir(os.path.join(root, d))])
-
+df= pd.read_csv('data_folder/datasets/phase1/chinese/food_class.csv')
+chn = df['English Name'].tolist()
 f101  = get_classes('data_folder/datasets/phase1/food101/images')
-chn   = get_classes('data_folder/datasets/phase1/chinese')
 mafd  = get_classes('data_folder/datasets/phase1/mafood/MAFood121/images')
 
 all_classes = sorted(set(

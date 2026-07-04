@@ -1,0 +1,382 @@
+path: P:\PROJECTS\DATA SCIENCE\FOOD CALORIES PREDICTION\data_folder\merged\phase1
+train: images/train
+val: images/val
+nc: 377
+names:
+- abalone
+- apple pie
+- artichoke bottoms in olive oil
+- baby back ribs
+- baklava
+- banh mi
+- banh xeo
+- bean curd
+- beef bourguignon
+- beef carpaccio
+- beef in oyster sauce
+- beef seasoned with soy sauce
+- beef tartare
+- beer duck
+- beet salad
+- beignets
+- bibimbap
+- biryani
+- biscuits
+- black bone chicken soup
+- black fungus in vinegar sauce
+- blanquette de veau
+- boiled chicken
+- boiled fish with picked cabbage and chili
+- boiled shredded pork in chili oil
+- borek
+- borsch
+- braised beans with potato
+- braised beef
+- braised beef noodle
+- braised fungus with pork slice
+- braised hairtail in brown sauce
+- braised pig feet with soy sauce
+- braised pork
+- braised pork with vermicelli
+- braised shrimp in chili oil
+- braised spareribs with kelp
+- bread
+- bread pudding
+- breakfast burrito
+- broccoli with oyster sauce
+- bruschetta
+- bun cha
+- butter chicken
+- caesar salad
+- cannoli
+- cao lau
+- caprese salad
+- carrot cake
+- celery and tofu
+- ceviche
+- cha ca
+- charcoal-boiled pork neck
+- cheese plate
+- cheese shrimp meat
+- cheesecake
+- chicken braised with brown sauce
+- chicken curry
+- chicken feet with black bean sauce
+- chicken feet with pickled peppers
+- chicken quesadilla
+- chicken wings
+- chiffon cake
+- chilaquiles
+- chiles en nogada
+- chinese hamburger
+- chinese yam in hot toffee
+- chocolate cake
+- chocolate mousse
+- chole
+- chongqing hot and sour rice noodles
+- chow mein
+- churros
+- cig kofte
+- clam chowder
+- club sandwich
+- coconut milk soup
+- coconut milk-flavored crepes with shrimp and beef
+- cola chicken wings
+- cold noodles
+- cold rice noodles
+- com tam
+- confit de canard
+- cookies
+- coq au vin
+- corn and sparerib soup
+- corn cob
+- crab
+- crab cakes
+- creme brulee
+- cripsy sweet & sour pork slices
+- croissant
+- croque madame
+- crucian and bean curd soup
+- cucumber in sauce
+- cup cakes
+- deep fried lotus root
+- deep-fried dough sticks
+- deviled eggs
+- donuts
+- double cooked pork slices
+- double skin milk
+- dough drop and assorted vegetable soup
+- duck blood in chili sauce
+- dumplings
+- edamame
+- eel
+- egg omelet
+- egg pie cake
+- egg pudding
+- egg tart
+- eggplant with mince pork
+- eggs benedict
+- enchiladas
+- escargots
+- falafel
+- filet mignon
+- fish and chips
+- fish filets in hot chili oil
+- foie gras
+- french fries
+- french onion soup
+- french toast
+- fried beans
+- fried calamari
+- fried cauliflower
+- fried chicken drumsticks
+- fried dumplings
+- fried lamb with cumin
+- fried mussel pancakes
+- fried noodles
+- fried pork in scoop
+- fried potato, green pepper & eggplant
+- fried rice
+- fried rice noodles
+- fried sweet and sour tenderloin
+- fried tofu
+- fried yam
+- frozen yogurt
+- fruit salad
+- garlic bread
+- gizzard
+- gnocchi
+- golden meat rolls
+- goya champuru
+- greek salad
+- green curry
+- grilled cheese sandwich
+- grilled fish
+- grilled salmon
+- guacamole
+- gyoza
+- gyro
+- hamburger
+- hamsi
+- home style sauteed tofu
+- hot and sour fish and vegetable ragout
+- hot and sour soup
+- hot dog
+- hue beef rice vermicelli soup
+- huevos rancheros
+- hummus
+- hunkar begendi
+- ice cream
+- icli kofte
+- ispanak
+- jellyfish
+- kaali daal
+- kebap
+- khao soi
+- kisir
+- kolokythokeftedes
+- kung pao chicken
+- lamb shashlik
+- lasagna
+- laver rice
+- leak and tofu
+- leek box
+- lettuce shredded meat
+- lettuce with smashed garlic
+- lobster bisque
+- lobster roll sandwich
+- lotus root
+- lotus root and rib soup
+- macaroni and cheese
+- macarons
+- malai kofta
+- manti
+- mapo tofu
+- marinated egg
+- mashed garlic eggplant
+- melitzanosalata
+- millet congee
+- minced pork congee with preserved egg
+- minestrone
+- miso soup
+- moussaka
+- mushroom risotto
+- mussels
+- naan
+- nachos
+- noodles with egg and tomato
+- noodles with fish curry
+- noodles with tomato sauce
+- okinawa soba
+- omelette
+- onion rings
+- oyster mushroom
+- oysters
+- pad thai
+- paella
+- palak paneer
+- pan fried potato
+- pancakes
+- paneer tikka
+- panna cotta
+- papdi chaat
+- pastitsio
+- peanut
+- peking duck
+- pepper with tiger skin
+- pho
+- pig ears
+- pine cake with diced scallion
+- pipi shrimp
+- pizza
+- poached egg
+- pork chop
+- pork liver
+- pork lungs in chili sauce
+- pork ribs soup with radish
+- pork with salted vegetable
+- pork wonton
+- pot bag meat
+- potato omelet
+- potato silk
+- poutine
+- pozole
+- prime rib
+- pulled pork sandwich
+- pumpkin pie
+- qishan noodles
+- ramen
+- ratatouille
+- ravioli
+- red velvet cake
+- rice
+- rice porridge
+- risotto
+- roast goose
+- roast pork
+- rogan josh
+- saganaki
+- salade nicoise
+- samosa
+- sarma
+- sashimi
+- saute spicy chicken
+- saute vegetable
+- sauted chinese greens with mushrooms
+- sauteed bean sprouts
+- sauteed beef fillet with hot green pepper
+- sauteed bitter melon
+- sauteed broad beans
+- sauteed lettuce in oyster sauce
+- sauteed lily bulbs and celery
+- sauteed noodles with minced meat
+- sauteed shredded pork in sweet bean sauce
+- sauteed shrimp meat
+- sauteed sliced lamb with scallion
+- sauteed sliced pork,eggs and black fungus
+- sauteed spainch
+- sauteed sweet corn with pine nuts
+- sauteed vermicelli with spicy minced pork
+- scallop in shell
+- scalloped pork or lamb kidneys
+- scallops
+- scrambled egg with cucumber
+- scrambled egg with leek
+- scrambled egg with tomato
+- seaweed and egg soup
+- seaweed salad
+- seaweed tofu soup
+- sesame seed cake
+- shredded cabbage
+- shredded chicken
+- shredded pork and green pepper
+- shredded pork with bean
+- shredded pork with vegetables
+- shrimp and grits
+- shrimp broccoli
+- shrimp duplings
+- sichuan noodles with peppery sauce
+- sirloin tomatoes
+- soba noodle
+- soda biscuit
+- sour cabbage
+- souvlaki
+- soy sauce chicken
+- soybean
+- spaghetti bolognese
+- spaghetti carbonara
+- spaghetti with meat sauce
+- spanakopita
+- spiced mushroom
+- spicy cabbage
+- spicy chicken
+- spicy crayfish
+- spicy pot
+- spicy shrimp
+- spinach and pork liver soup
+- spring rolls
+- squid
+- steak
+- steamed baby cabbage
+- steamed bun
+- steamed bun stuffed
+- steamed bun with purple potato and pumpkin
+- steamed chicken with chili sauce
+- steamed chicken with mushroom
+- steamed egg custard
+- steamed fish head with diced hot red peppers
+- steamed perch
+- steamed pork dumplings
+- steamed pork with rice powder
+- steamed rice roll
+- steamed shrimp with garlic and vermicelli
+- steamed stuffed bun
+- steamed vermicelli roll
+- stewed chicken with three cups sauce
+- stewed pork ball in brown sauce
+- stewed pork leg
+- stewed sirloin potatoes
+- stinky tofu
+- stone pot of rice
+- strawberry shortcake
+- stuffed bitter melon
+- sukiyaki
+- sushi
+- sweet and sour fish
+- sweet and sour mandarin fish
+- sweet and sour spareribs
+- sweet potato porridge
+- sweet stewed snow pear
+- tacos
+- takoyaki
+- tandoori chicken
+- tang-yuan
+- tempura
+- thai papaya salad
+- tiger lily buds in baconic
+- tiramisu
+- toast
+- tomato and egg soup
+- tomato salad
+- tomatokeftedes
+- tostadas
+- tripe
+- tumis kangkung
+- tuna tartare
+- turtle
+- twice cooked pork
+- udon noodle
+- vermicelli noodles with snails
+- waffles
+- west lake beef soup
+- white fungus soup
+- white gourd soup
+- winter melon soup
+- xiao long bao
+- yangzhou fried rice
+- yellow curry
+- yemista
+- yu-shiang eggplant
+- yu-shiang shredded pork
+- yuba salad
+- zha jiang mian
