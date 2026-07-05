@@ -1,2 +1,3 @@
 data_folder/
 yolo26s.pt
+runs/
