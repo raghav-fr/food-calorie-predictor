@@ -6,7 +6,7 @@ from multiprocessing import freeze_support
 
 
 def main():
-    model = YOLO("runs/detect/runs/phase1/pretrain_v1/weights/last.pt")
+    model = YOLO("runs/detect/runs/phase1/pretrain_v1-2/weights/last.pt")
     model.train(resume=True)
 
 
