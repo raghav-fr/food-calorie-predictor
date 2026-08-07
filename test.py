@@ -1,8 +1,11 @@
-import os
+from pathlib import Path
 
-root = "data_folder/datasets/phase2/foodseg103"
+root = Path("data_folder/merged/phase2/images")
 
-for path, dirs, files in os.walk(root):
-    print(path)
-    if len(files):
-        print("  Files:", files[:5])
+count = 0
+
+for f in root.rglob("*.npy"):
+    f.unlink()
+    count += 1
+
+print(f"Deleted {count} cache files.")
