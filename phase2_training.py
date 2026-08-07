@@ -5,10 +5,6 @@ from multiprocessing import freeze_support
 
 def main():
 
-    # ==========================================================
-    # Performance Optimizations
-    # ==========================================================
-
     torch.backends.cudnn.benchmark = True
 
     device = 0 if torch.cuda.is_available() else "cpu"
@@ -20,75 +16,32 @@ def main():
     else:
         print("Running on CPU")
 
-    # ==========================================================
-    # Phase-2 Fine-tuning Configuration
-    # ==========================================================
-
     finetune_args = dict(
-
-        # -----------------------------
-        # Training
-        # -----------------------------
         epochs=120,
         imgsz=640,
         batch=8,                   # Change if OOM
         device=device,
-
-        # -----------------------------
-        # Optimizer
-        # -----------------------------
         optimizer="AdamW",
         lr0=8e-5,
         lrf=0.001,
         cos_lr=True,
         warmup_epochs=8,
-
-        # -----------------------------
-        # Backbone
-        # -----------------------------
         freeze=10,
 
-        # -----------------------------
-        # Data Loading
-        # -----------------------------
         cache=False,
         workers=6,
 
-        # -----------------------------
-        # Mixed Precision
-        # -----------------------------
         amp=True,
 
-        # -----------------------------
-        # Early Stopping
-        # -----------------------------
-        patience=10,
 
-        # -----------------------------
-        # Saving
-        # -----------------------------
+        patience=10,
         save_period=5,
 
-        # -----------------------------
-        # Project
-        # -----------------------------
         project="runs/phase2",
         name="finetune_v1",
-
-        # -----------------------------
-        # Reproducibility
-        # -----------------------------
         seed=42,
         deterministic=False,
-
-        # -----------------------------
-        # Multi-scale
-        # -----------------------------
         multi_scale=False,
-
-        # -----------------------------
-        # Augmentations
-        # -----------------------------
         mosaic=0.3,
         close_mosaic=15,
         mixup=0.1,
@@ -103,34 +56,17 @@ def main():
         hsv_h=0.01,
         hsv_s=0.30,
         hsv_v=0.30,
-
-        # -----------------------------
-        # Loss
-        # -----------------------------
         cls=1.5,
         label_smoothing=0.05,
-
-        # -----------------------------
-        # Validation
-        # -----------------------------
         val=False,
-
         verbose=True
     )
-
-    # ==========================================================
-    # Load Phase-1 Weights
-    # ==========================================================
 
     model = YOLO(
         "runs/detect/runs/phase1/pretrain_v1-2/weights/best.pt"
     )
 
     print("\nStarting Phase-2 Fine-tuning...\n")
-
-    # ==========================================================
-    # Train
-    # ==========================================================
 
     model.train(
 
@@ -139,10 +75,6 @@ def main():
         **finetune_args
 
     )
-
-    # ==========================================================
-    # Validation
-    # ==========================================================
 
     print("\nLoading best model...\n")
 
