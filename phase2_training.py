@@ -63,7 +63,7 @@ def main():
     )
 
     model = YOLO(
-        "runs/detect/runs/phase1/pretrain_v1-2/weights/best.pt"
+        "runs/detect/runs/phase1/pretrain_v1-2/weights/best_repaired.pt"
     )
 
     print("\nStarting Phase-2 Fine-tuning...\n")
