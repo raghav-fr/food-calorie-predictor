@@ -1,3 +1,4 @@
+import json
 import cv2
 import numpy as np
 import shutil
@@ -19,6 +20,29 @@ TRAIN_LBL_OUT = OUT_ROOT / "labels" / "train"
 
 VAL_IMG_OUT = OUT_ROOT / "images" / "val"
 VAL_LBL_OUT = OUT_ROOT / "labels" / "val"
+with open("data_folder/logs/dedup_map.json", encoding="utf-8") as f:
+    dedup_map = json.load(f)["mapping"]
+
+with open("data_folder/merged/global_class_map.json", encoding="utf-8") as f:
+    global_map = json.load(f)["map"]
+
+def normalize(name):
+    return (
+        name.lower()
+            .replace("_", " ")
+            .replace("-", " ")
+            .replace("&", "and")
+            .strip()
+    )
+
+foodseg_cats = {}
+with open(ROOT / "category_id.txt", encoding="utf-8") as f:
+    for line in f:
+        line = line.strip()
+        if not line: continue
+        parts = line.split(maxsplit=1)
+        if len(parts) == 2:
+            foodseg_cats[int(parts[0])] = parts[1].strip().lower().replace("_", " ")
 
 for p in [
     TRAIN_IMG_OUT,
@@ -138,11 +162,17 @@ def process_split(split):
 
             for class_id, cx, cy, bw, bh in boxes:
 
-                # local ids for now
-                local_id = class_id - 1
+                cat_name = foodseg_cats.get(int(class_id))
+                if not cat_name: continue
+                
+                normalized_name = normalize(cat_name)
+                canonical_name = dedup_map.get(normalized_name, normalized_name)
+                global_id = global_map.get(canonical_name)
+                
+                if global_id is None: continue
 
                 f.write(
-                    f"{local_id} "
+                    f"{global_id} "
                     f"{cx:.6f} "
                     f"{cy:.6f} "
                     f"{bw:.6f} "

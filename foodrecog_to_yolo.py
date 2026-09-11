@@ -8,8 +8,24 @@ sample_ann = coco_train.loadAnns([1])[0]
 print(sample_ann)
 # {'id': 1, 'image_id': 123, 'category_id': 42,
 #  'bbox': [x, y, w, h], 'segmentation': [...]}
+import json
 import shutil
 from pathlib import Path
+
+with open("data_folder/logs/dedup_map.json", encoding="utf-8") as f:
+    dedup_map = json.load(f)["mapping"]
+
+with open("data_folder/merged/global_class_map.json", encoding="utf-8") as f:
+    global_map = json.load(f)["map"]
+
+def normalize(name):
+    return (
+        name.lower()
+            .replace("_", " ")
+            .replace("-", " ")
+            .replace("&", "and")
+            .strip()
+    )
 
 def convert_coco_to_yolo(coco, img_dir, out_img_dir, out_lbl_dir, prefix):
   for img_id, img_info in coco.imgs.items():
@@ -33,8 +49,11 @@ def convert_coco_to_yolo(coco, img_dir, out_img_dir, out_lbl_dir, prefix):
         cx = (x + w/2) / W
         cy = (y + h/2) / H
         nw, nh = w/W, h/H
-        global_id = ann['category_id'] - 1
-        if global_id < 0: continue
+        cat_name = coco.cats[ann['category_id']]['name']
+        normalized_name = normalize(cat_name)
+        canonical_name = dedup_map.get(normalized_name, normalized_name)
+        global_id = global_map.get(canonical_name)
+        if global_id is None: continue
         f.write(f'{global_id} {cx:.6f} {cy:.6f} {nw:.6f} {nh:.6f}\n')
 
 convert_coco_to_yolo(
